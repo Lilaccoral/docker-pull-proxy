@@ -1,1 +1,1 @@
-alpine:20240606 registry.cn-hangzhou.aliyuncs.com/yaming116/alpine:20240606
+stashapp/stash:latest registry.cn-hangzhou.aliyuncs.com/aliyun_ds/stash:latest
