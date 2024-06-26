@@ -29,11 +29,11 @@ jobs:
       run: |
         #docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $REGISTRY
         #sh pull.sh
-        data=`cat trigger.txt`
-
+        content=$(cat your_file.txt)
+        result=$(echo "$content" | awk -F':' '{print $1}' | paste -sd ",")
         if [ $MM_NOTIFY_URL ];then
           echo $data
-          curl "https://wecomchan.wangbq.win:9104/wecomchan?sendkey=oR5yL6zT4gQ4eC3fK8&msg={同步成功 $data}&msg_type=text"
+          curl "https://wecomchan.wangbq.win:9104/wecomchan?sendkey=oR5yL6zT4gQ4eC3fK8&msg={同步成功 $result}&msg_type=text"
         else
           echo 'MM_NOTIFY_URL not set'
         fi
