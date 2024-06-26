@@ -23,7 +23,7 @@ jobs:
       uses: docker/setup-buildx-action@79abd3f86f79a9d68a23c75a09a9a85889262adf
 
     - name: Check out code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Build and push image to ACR EE
       run: |
@@ -31,7 +31,8 @@ jobs:
         data=`cat trigger.txt`
 
         if [ $MM_NOTIFY_URL ];then
-          curl '$MM_NOTIFY_URL?sendkey=$SEND_KEY&msg={同步成功 $data }&msg_type=text'
+          echo '$MM_NOTIFY_URL'
+          curl 'https://wecomchan.wangbq.win:9104/wecomchan?sendkey=oR5yL6zT4gQ4eC3fK8&msg={你的文本test消息}&msg_type=text'
         else
           echo 'MM_NOTIFY_URL not set'
         fi
