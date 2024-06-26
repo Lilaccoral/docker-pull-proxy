@@ -27,12 +27,11 @@ jobs:
 
     - name: Build and push image to ACR EE
       run: |
-        docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $REGISTRY
-        sh pull.sh
+        
         data=`cat trigger.txt`
 
         if [ $MM_NOTIFY_URL ];then
-          curl --location --request GET '$MM_NOTIFY_URL?sendkey=$SEND_KEY&msg={同步成功 $data }&msg_type=text'
+          curl '$MM_NOTIFY_URL?sendkey=$SEND_KEY&msg={同步成功 $data }&msg_type=text'
         else
           echo 'MM_NOTIFY_URL not set'
         fi
