@@ -31,9 +31,7 @@ jobs:
         data=`cat trigger.txt`
 
         if [ $MM_NOTIFY_URL ];then
-          curl  -H 'Content-Type: application/json' \
-            -d "{\"msgtype\": \"text\",\"text\": {\"content\":\"同步成功 $data \"}}" \
-            $MM_NOTIFY_URL
+          curl --location --request GET '$MM_NOTIFY_URL?sendkey=$SEND_KEY&msg={同步成功 $data }&msg_type=text'
         else
           echo 'MM_NOTIFY_URL not set'
         fi
