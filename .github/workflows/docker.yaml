@@ -29,7 +29,7 @@ jobs:
       run: |
         #docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $REGISTRY
         #sh pull.sh
-        content=$(cat your_file.txt)
+        content=$(cat trigger.txt)
         result=$(echo "$content" | awk -F':' '{print $1}' | paste -sd ",")
         if [ $MM_NOTIFY_URL ];then
           echo $data
