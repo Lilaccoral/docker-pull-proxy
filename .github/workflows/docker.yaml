@@ -11,6 +11,7 @@ env:
   ALIYUN_REGISTRY_USER: "${{ secrets.ALIYUN_REGISTRY_USER }}"
   ALIYUN_REGISTRY_PASSWORD: "${{ secrets.ALIYUN_REGISTRY_PASSWORD }}"
   MM_NOTIFY_URL: "${{ secrets.MM_NOTIFY_URL }}"
+  SEND_KEY: "${{ secrets.SEND_KEY }}"
 
 jobs:
 
