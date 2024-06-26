@@ -32,8 +32,7 @@ jobs:
         data=`cat trigger.txt`
 
         if [ $MM_NOTIFY_URL ];then
-          echo $MM_NOTIFY_URL
-          curl $MM_NOTIFY_URL'?sendkey='$SEND_KEY'&msg={'$data'}&msg_type=text'
+          curl 'https://wecomchan.wangbq.win:9104/wecomchan?sendkey=oR5yL6zT4gQ4eC3fK8&msg={同步成功 '$data'}&msg_type=text'
         else
           echo 'MM_NOTIFY_URL not set'
         fi
