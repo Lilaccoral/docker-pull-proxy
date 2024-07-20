@@ -1,2 +1,3 @@
 stashapp/stash:latest registry.cn-hangzhou.aliyuncs.com/aliyun_ds/stash:latest
 aozakiaoko/go-wecomchan:latest registry.cn-hangzhou.aliyuncs.com/aliyun_ds/go-wecomchan:latest
+neilpang/acme.sh:latest registry.cn-hangzhou.aliyuncs.com/aliyun_ds/acme.sh:latest
